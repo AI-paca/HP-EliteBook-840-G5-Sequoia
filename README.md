@@ -19,7 +19,7 @@ Interfaces:
 EFI/OC/Drivers
 - [HfsPlus.efi](https://github.com/acidanthera/OcBinaryData/blob/master/Drivers/HfsPlus.efi)
 - OpenRuntime.efi
-the other drivers are up to your liking
+- the other drivers are up to your liking
 
 EFI/OC/Kexts<br>
 pre-compiled [kext](https://dortania.github.io/builds/)
