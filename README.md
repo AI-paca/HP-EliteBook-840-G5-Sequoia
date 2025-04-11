@@ -54,5 +54,5 @@ EFI/OC/ACPI<br>
 - generate ASPI on the target device via [SSDTTime](https://github.com/corpnewt/SSDTTime) (btw I got it from [here](https://github.com/kecinzer/hpelitebook850g5-opencore))
 ---
 Errors:
-<br>— ACPI Error: battery detection, this error is related to the updated version of BIOS (potential solution [here](https://github.com/kecinzer/hpelitebook850g5-opencore/tree/master/EFI/OC/ACPI))
+<br>— ACPI Error: battery detection, this error is related to the updated version of BIOS (potential solution not [here](https://github.com/kecinzer/hpelitebook850g5-opencore/tree/master/EFI/OC/ACPI))
 <br>— BIOS error 005 (loss of real time clock power, suspecting this is a consequence of the previous problem)
