@@ -44,6 +44,7 @@ pre-compiled [kext](https://dortania.github.io/builds/)
 - CpuTscSync.kext
 - VoodooPS2Controller.kext
 - VoodooRMI.kext
+- btw I got it from [here](https://github.com/MetalStrikerXLR/Hackintosh-HP-Elitebook-840-G5-Sonoma.git)
 
 I use a WD SSD, if you use a different SSD add this:
 - NVMeFix.kext
@@ -52,7 +53,3 @@ I use a WD SSD, if you use a different SSD add this:
 
 EFI/OC/ACPI<br>
 - generate ASPI on the target device via [SSDTTime](https://github.com/corpnewt/SSDTTime) (btw I got it from [here](https://github.com/kecinzer/hpelitebook850g5-opencore))
----
-Errors:
-<br>— ACPI Error: battery detection, this error is related to the updated version of BIOS (potential solution not [here](https://github.com/kecinzer/hpelitebook850g5-opencore/tree/master/EFI/OC/ACPI))
-<br>— BIOS error 005 (loss of real time clock power, suspecting this is a consequence of the previous problem)
