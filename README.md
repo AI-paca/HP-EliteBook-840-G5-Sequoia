@@ -44,7 +44,7 @@ pre-compiled [kext](https://dortania.github.io/builds/)
 - CpuTscSync.kext
 - VoodooPS2Controller.kext
 - VoodooRMI.kext
-- btw I got it from [here](https://github.com/MetalStrikerXLR/Hackintosh-HP-Elitebook-840-G5-Sonoma.git)
+btw I got it from [here](https://github.com/MetalStrikerXLR/Hackintosh-HP-Elitebook-840-G5-Sonoma.git)
 
 I use a WD SSD, if you use a different SSD add this:
 - NVMeFix.kext
