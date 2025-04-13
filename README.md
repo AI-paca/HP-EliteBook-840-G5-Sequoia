@@ -29,7 +29,7 @@ EFI/OC/ACPI<br>
 - I tried to get them from OpCore-Simplify, but, I didn't have a sys/..../aspi file or anything like that, so I got them from [this](https://github.com/kecinzer/hpelitebook850g5-opencore) (If the previous two methods didn't work, you can generate an ASPI on the target device using [SSDTTime](https://github.com/corpnewt/SSDTTime))
 
 Errors:<br>
-— BIOS error 005 (loss of real time clock power); this error is related to the configuration file, I have a [solution](https://github.com/AI-paca/HP-EliteBook-840-G5-Sequoia/commit/ad67879db6f610d0a522bfd27727b328cd686e63) - [config_without_bios_005_error.plist](https://github.com/AI-paca/HP-EliteBook-840-G5-Sequoia/blob/main/EFI/OC/config_without_bios_005_error.plist) but... I'm too lazy to reinstall the system, so I'll keep both files.
+— BIOS error 005 (loss of real time clock power); this error is related to the configuration file, I have a [solution](https://github.com/AI-paca/HP-EliteBook-840-G5-Sequoia/commit/ad67879db6f610d0a522bfd27727b328cd686e63) - [config_without_bios_005_error.plist](https://github.com/AI-paca/HP-EliteBook-840-G5-Sequoia/blob/main/EFI/OC/config_without_bios_005_error.plist) but... I'm too lazy to reinstall the system, so I'll keep both files here.
 
 NB:<br>
 — don't forget to be careful with [platform info](https://dortania.github.io/OpenCore-Install-Guide/config-laptop.plist/kaby-lake.html#platforminfo)
