@@ -36,8 +36,8 @@ Errors:<br>
 NB:<br>
 - don't forget to be careful with [platform info](https://dortania.github.io/OpenCore-Install-Guide/config-laptop.plist/kaby-lake.html#platforminfo)
 - use the space bar in the loader if you don't see something
-- after installing opencore, do not update SSDT tables in windows unnecessarily (otherwise windows will stop booting through opencore due to table conflict)
+- after installing opencore, do not update SSDT tables in windows unnecessarily (otherwise windows will stop booting through opencore due to table conflict) | I'm wrong, the problem is not the tables
 
 <br>P.S. 
-temporary [solution](https://github.com/OpenIntelWireless/itlwm/issues/1009) for native wifi (Sep 24, 2024)
-used [icons](https://github.com/blackosx/OpenCanopyIcons/blob/master/Set4/Grey_Alpha_Without_Glow/preview_sheet_Grey_Alpha_Without_Glow.jpg)
+- temporary [solution](https://github.com/OpenIntelWireless/itlwm/issues/1009) for native wifi (Sep 24, 2024)
+- used [icons](https://github.com/blackosx/OpenCanopyIcons/blob/master/Set4/Grey_Alpha_Without_Glow/preview_sheet_Grey_Alpha_Without_Glow.jpg)
