@@ -41,4 +41,4 @@ NB:<br>
 <br>P.S. 
 - temporary [solution](https://github.com/OpenIntelWireless/itlwm/issues/1009) for native wifi (Sep 24, 2024)
 - used [icons](https://github.com/blackosx/OpenCanopyIcons/blob/master/Set4/Grey_Alpha_Without_Glow/preview_sheet_Grey_Alpha_Without_Glow.jpg)
-- if you install docker in windows, bootmngr.efi (windows bootloader) will only work correctly through bios, but not through opencore (no idea why) 
+- if you install docker in windows, bootmngr.efi (windows bootloader) will only work correctly through bios, but not through opencore (potential solution Booter->Quirks->SyncRuntimePermissions: true) 
