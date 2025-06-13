@@ -2,15 +2,19 @@ EliteBook 840 G5
 - Intel UHD Graphics 620
 - Core i7 - 8550U (Kaby Lake-R) but OpCore-Simplify generated EFI for Coffee Lake-U 
 ---
+This repository contains two branches:
+- for [any 840 g5](https://github.com/AI-paca/HP-EliteBook-840-G5-Sequoia/tree/any-840-G5) (you are here)
+- and specifically for [my](https://github.com/AI-paca/HP-EliteBook-840-G5-Sequoia/tree/3JY11EA) model
+---
 Interfaces:
-- USB 3.1 - testing
+- USB - ok
 - RJ45 (LAN) - ok
-- 3.5 jack - testing
+- 3.5 jack - ok
 - Mic - ok
 - Cam - fail (is detected correctly, but it doesn't display an image)
-- HDMI - testing
+- HDMI - ok
 - Thunderbolt 3 - testing
-- Card Reader - testing
+- Card Reader - idk (I have a SimCard slot)
 - Touchpad gestures - ok
 - WiFi - ok (load the [client](https://github.com/OpenIntelWireless/HeliPort/releases/) after install) 
 - Bluetooth - ok
@@ -36,4 +40,4 @@ NB:<br>
 - don't forget to be careful with [platform info](https://dortania.github.io/OpenCore-Install-Guide/config-laptop.plist/kaby-lake.html#platforminfo)
 - use the space bar in the loader if you don't see something
 
-<br>P.S. I will add the fixed EFI working for my screen in another thread. There I'm also going to change PNLF for my screen, mark the fn keys a bit differently (probably they are no longer detected correctly in all systems after the next bios update). How to fix the camera doesn't bother me yet, microphone, sound and bluetooth work, that's enough for me (I'll try to fix it, but no promises). I will also try to upgrade to 4.1 and will report here about the results.
+<br>P.S. I will add the fixed EFI working for my screen in another thread. There I'm also going to change PNLF for my screen, mark the fn keys a bit differently (probably they are no longer detected correctly in all systems after the next bios update). Although your system will see the updates, you will not be able to install them due to the Wi-Fi kext.
