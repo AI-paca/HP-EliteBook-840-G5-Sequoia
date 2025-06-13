@@ -6,12 +6,11 @@ EliteBook 840 G5
 Interfaces:
 - USB 3.1 - ok
 - RJ45 (LAN) - ok
-- 3.5 jack - testing
+- 3.5 jack - ok
 - Mic - ok
 - Cam - fail (is detected correctly, but it doesn't display an image)
 - HDMI - ok
 - Thunderbolt 3 - testing
-- Card Reader - testing
 - Touchpad gestures - ok
 - WiFi - ok (native) 
 - Bluetooth - ok
@@ -46,3 +45,43 @@ NB:<br>
 - itlwm is still active, so install the [client](https://github.com/OpenIntelWireless/HeliPort/releases/) in case when the wifi breaks.
 - if you install docker in windows, bootmngr.efi (windows bootloader) will only work correctly through bios, but not through opencore (potential solution Booter->Quirks->SyncRuntimePermissions: true)
 - you don't need SSDT-VOLKEYS.aml, first of all it doesn't work, secondly volume keys work via fn (and it annoys me).
+- win Fn brightness driver (ik, u can [find](https://h30434.www3.hp.com/t5/Notebook-Hardware-and-Upgrade-Questions/HP-Hotkey-Support-Solution/m-p/8912812) [it](https://ftp.hp.com/pub/softpaq/sp91501-92000/sp91903.exe) any moment, but I'm lazy)
+<details>
+  
+<summary>Linux AMD Support (I use arch btw :)</summary>
+
+Here are a few solutions, the main issue is GPU acceleration. You can play games on an AMD GPU with `DRI_PRIME=1 steam`  after disabling GPU acceleration in steam's settings. However, you might face issues if you run Docker containers on the GPU and access them from a browser; I use `radeontop` to monitor the load.
+
+- **amdgpu-pro-installer** from [aur](https://aur.archlinux.org/pkgbase/amdgpu-pro-installer), but "AMD are saying the amdgpu-pro drivers are being discontinued in favor of Mesa".
+
+- **mesa with AMD flags** (doesn't fix GPU acceleration)
+  <br>Clone and edit the `PKGBUILD`:
+  ```bash
+  git clone https://aur.archlinux.org/mesa-git.git
+  cd mesa-git
+  nano PKGBUILD
+  ```
+  Add these `meson_options`:
+  ```
+  -D gallium-rusticl=true
+  -D gallium-rusticl-enable-drivers=radeonsi # AMD support
+  -D mesa-clc-bundle-headers=enabled
+  -D static-libclc=spirv,all
+  ```
+  Then build and install:
+  ```bash
+  makepkg -si
+  ```
+
+- **nothing** (your system may take ages to shut down, or sddm might crash; this should help you ignore the errors better; doesn't fix GPU acceleration)
+  Edit this line to `/etc/default/grub`:
+  ```
+  GRUB_CMDLINE_LINUX_DEFAULT="quiet amdgpu.ppfeaturemask=0xffffffff amdgpu.vm_update_mode=3 amdgpu.gpu_recovery=1 amdgpu.lockup_timeout=10000 i915.enable_psr=0 amdgpu.deep_color=0 amdgpu.noretry=0 radeon.si_support=0 radeon.cik_support=0 amdgpu.runpm=0"
+  ```
+  Then update grub:
+  ```bash
+  sudo grub-mkconfig -o /boot/grub/grub.cfg
+  ```
+
+- **Disable amdgpu** 
+</details>
