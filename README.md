@@ -46,12 +46,12 @@ NB:<br>
 
 <br>P.S. 
 - used [icons](https://github.com/blackosx/OpenCanopyIcons/blob/master/Set4/Grey_Alpha_Without_Glow/preview_sheet_Grey_Alpha_Without_Glow.jpg)
-- temporary [solution](https://github.com/OpenIntelWireless/itlwm/issues/1009) for native wifi (Sep 24, 2024)
+- temporary [solution](https://github.com/OpenIntelWireless/itlwm/issues/1009#issuecomment-2370919270) for native wifi, ensure you use [it](https://github.com/OpenIntelWireless/itlwm/issues/1009#issuecomment-2379813578) right; my config should work for you by default if you change the device path of the wifi card to yours. however, if you plan to use permanent [solution](https://github.com/Lorys89/itlwm/releases), you should get rid of the patched files or revert to [any 840 g5](https://github.com/AI-paca/HP-EliteBook-840-G5-Sequoia/tree/any-840-G5) branch.
 - bluetooth [solution](https://www.reddit.com/r/hackintosh/comments/1fsvhsj/finally_i_made_my_bluetooth_work_in_sequoia/) (yes, you seriously need to write 28 zeros and reset nvram, yes, that would work)
 - wifi and bluetooth will crash every time you edit the config file, or more accurately do an OS snapshot, so do it at the end when everything is already configured
 - itlwm is still active, so install the [client](https://github.com/OpenIntelWireless/HeliPort/releases/) in case when the wifi breaks.
-- if you install docker in windows, bootmngr.efi (windows bootloader) will only work correctly through bios, but not through opencore (potential solution Booter->Quirks->SyncRuntimePermissions: true)
-- you don't need SSDT-VOLKEYS.aml, first of all it doesn't work, secondly volume keys work via fn (and it annoys me).
+- if you install docker in windows, bootmngr.efi (windows bootloader) will only work correctly through bios, but not through opencore (solution: Booter->Quirks->SyncRuntimePermissions: true; this also solves the linux startup problem)
+- you don't need SSDT-VOLKEYS.aml, first of all it doesn't work, secondly volume keys work via fn (and that annoys me).
 
 <details>
   <summary>Windows Fn brightness driver</summary>
@@ -64,7 +64,7 @@ I know, you can [find](https://h30434.www3.hp.com/t5/Notebook-Hardware-and-Upgra
 
 Here are a few solutions, the main issue is GPU acceleration. You can play games on an AMD GPU with `DRI_PRIME=1 steam`  after disabling GPU acceleration in steam's settings. However, you might face issues if you run Docker containers on the GPU and access them from a browser; I use `radeontop` to monitor the load.
 
-- **amdgpu-pro-installer** from [aur](https://aur.archlinux.org/pkgbase/amdgpu-pro-installer), but "AMD are saying the amdgpu-pro drivers are being discontinued in favor of Mesa".
+- **amdgpu-pro-installer** from [aur](https://aur.archlinux.org/pkgbase/amdgpu-pro-installer), but "AMD are saying the amdgpu-pro drivers are being discontinued in favor of Mesa". (doesn't fix GPU acceleration)
 
 - **mesa with AMD flags** (doesn't fix GPU acceleration)
   <br>Clone and edit the `PKGBUILD`:
@@ -95,5 +95,7 @@ Here are a few solutions, the main issue is GPU acceleration. You can play games
   sudo grub-mkconfig -o /boot/grub/grub.cfg
   ```
 
-- **disable amdgpu** 
+- **disable amdgpu**
+
+I'm still trying to figure out the issue, but it looks like the BIOS doesn't have the right settings for GPU acceleration for amdgpu (for the obvious reason - no one needed it in 2018)
 </details>
