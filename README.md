@@ -39,10 +39,14 @@ EFI/OC/ACPI<br>
 Errors:<br>
 - usb 1.0 is no longer supported, I have not updated usb kext, so the camera is detected, but does not transmit a picture
 - visual noise after coming out of sleep (not significant)
+- fingerprint (I didn't try, but windows doesn't see it)
+- nfc (I didn't try)
+- usb 3.1 (It feels like they work slower than I'd like or sequoia is so heavy that it takes 4 hours to install)
 
 NB:<br>
 - don't forget to be careful with [platform info](https://dortania.github.io/OpenCore-Install-Guide/config-laptop.plist/kaby-lake.html#platforminfo)
 - use the space bar in the loader if you don't see something
+- ctrl+enter or shift+enter to remember the priority system (but it will be reset when u updating any system)
 
 <br>P.S. 
 - used [icons](https://github.com/blackosx/OpenCanopyIcons/blob/master/Set4/Grey_Alpha_Without_Glow/preview_sheet_Grey_Alpha_Without_Glow.jpg)
@@ -57,6 +61,8 @@ NB:<br>
   <summary>Windows Fn brightness driver</summary>
   
 I know, you can [find](https://h30434.www3.hp.com/t5/Notebook-Hardware-and-Upgrade-Questions/HP-Hotkey-Support-Solution/m-p/8912812) [it](https://ftp.hp.com/pub/softpaq/sp91501-92000/sp91903.exe) any moment, but I'm not
+
+mount EFI: `mountvol E: /S `; E - new disk name 
 </details>
 
 <details>
@@ -97,5 +103,5 @@ Here are a few solutions, the main issue is GPU acceleration. You can play games
 
 - **disable amdgpu**
 
-I'm still trying to figure out the issue, but it looks like the BIOS doesn't have the right settings for GPU acceleration for amdgpu (for the obvious reason - no one needed it in 2018)
+I'm still trying to figure out the issue, but it looks like the gpu too old for it (no one needed it in 2018)
 </details>
